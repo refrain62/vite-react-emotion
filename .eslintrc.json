@@ -33,6 +33,8 @@
       "react-hooks/exhaustive-deps": "warn",
       "react/react-in-jsx-scope": "off",
       "@typescript-eslint/triple-slash-reference": "off",
+      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+      "react/no-unknown-property": ["error", { "ignore": ["css"] }],
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -50,4 +52,3 @@
     "ignorePatterns": ["vite.config.ts"],
     "root": true
   }
-  

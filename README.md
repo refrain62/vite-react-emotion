@@ -139,6 +139,45 @@ npm run lint-staged
 ```
 正しく設定ができていれば、lint エラーがあるままでコミットしようとすると失敗します。
 
+## emotionの設定
+Emotion のインストール
+```
+npm i @emotion/react
+```
+vite.config.ts に追記
+```
+export default defineConfig({
+  plugins: [
+    react({
+      jsxImportSource: "@emotion/react", // ここを追記
+    }),
+  ],
+});
+```
+tsconfig.json に追記
+```
+{
+  "compilerOptions": {
+    ...
+    "jsxImportSource": "@emotion/react",
+    ...
+  },
+  ...
+}
+```
+.eslintrc.json に追記
+```
+{
+  ...
+  "rules": {
+    ...
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }]
+  }
+  ...
+}
+```
+
 
 
 
