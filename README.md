@@ -113,6 +113,33 @@ dist
 .github
 ```
 
+## Husky の設定
+```
+$ npx husky-init
+$ npm install
+```
+lint-staged をインストールします。
+```
+$ npm i -D lint-staged
+```
+.huskyrc ファイルを作成します。
+```
+{
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  }
+}
+```
+.husky フォルダ内の pre-commit ファイルの一部を書き換えます。
+```
+npm test
+↓
+npm run lint-staged
+```
+正しく設定ができていれば、lint エラーがあるままでコミットしようとすると失敗します。
+
+
 
 
 # React + TypeScript + Vite
