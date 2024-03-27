@@ -14,6 +14,37 @@ $ npm i
 $ npm run dev
 ```
 
+## Pretterのインストール
+```
+$ npm i -D prettier
+```
+.prettierrc ファイルを作成します。基本に必要なものを追加しました。
+```
+{
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "useTabs": true,
+  "printWidth": 80
+}
+```
+.prettierignore ファイルを作成
+```
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+build
+dist
+public
+```
+
+
+
+
 
 # React + TypeScript + Vite
 
