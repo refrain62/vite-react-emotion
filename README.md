@@ -42,7 +42,76 @@ dist
 public
 ```
 
-
+## ESLintの設定
+ESLintはプロジェクト作成時にインストールされているので初期化します。 .eslintrc.json ファイルが作成されます。
+```
+$ npm init @eslint/config
+```
+必要なプラグイン類をインストールします。
+```
+$ npm i -D eslint-config-airbnb eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-prettier eslint-plugin-react
+```
+デフォルトの記述に必要なものを追加しました。
+```
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-typescript",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".md", ".json"]
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier",
+    "import"
+  ],
+  "rules": {
+    "semi": [2, "always"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/triple-slash-reference": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": ["vite.config.ts"],
+  "root": true
+}
+```
+.eslintignore ファイルを作成します。
+```
+node_modules
+dist
+.github
+```
 
 
 
